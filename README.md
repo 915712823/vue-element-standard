@@ -1,4 +1,4 @@
-# elementui-standard
+# vue-element-standard
 
 ## Project setup
 ```

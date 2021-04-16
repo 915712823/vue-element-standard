@@ -7,14 +7,21 @@ import store from './store'
 
 
 
-import './styles/reset.css'; // resetcss
+
+// ui相关
+// elementUI
+import './ui'
+import 'element-ui/lib/theme-chalk/index.css'
+// css
+import './styles/reset.css'  //css初始化
+import './styles/common.scss' //公共css样式
+
 
 
 
 
 
 Vue.config.productionTip = false
-
 
 new Vue({
   router,

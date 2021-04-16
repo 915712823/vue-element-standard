@@ -1,0 +1,95 @@
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+// element 下拉
+.el-dropdown-link {
+  cursor: pointer;
+  color: #409eff;
+  font-size: 12px;
+  user-select: none;
+
+  .el-icon-arrow-down {
+    font-size: 12px;
+  }
+}
+
+
+.df {
+  display: flex;
+}
+
+.dfc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 文字一行超出省略
+.otw {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 文字两行超出省略
+.otw2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+// 封装常用边距
+$listKey:t,
+b,
+l,
+r;
+
+$listVal:top,
+bottom,
+left,
+right;
+$mp-size: 8px;
+
+@for $size from 0 to 4 {
+  .p#{$size} {
+    padding: $size * $mp-size;
+  }
+
+  @for $i from 1 to length($listKey)+1 {
+    .p#{nth($listKey,$i)}#{$size} {
+      padding-#{nth($listVal,$i)}: $size * $mp-size;
+    }
+  }
+
+  .m#{$size} {
+    margin: $size * $mp-size;
+  }
+
+  @for $i from 1 to length($listKey)+1 {
+    .m#{nth($listKey,$i)}#{$size} {
+      margin-#{nth($listVal,$i)}: $size * $mp-size;
+    }
+  }
+}
+
+
+.clearfix:after,
+.clearfix:before {
+  content: " ";
+  display: table
+}
+
+.clearfix:after {
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both
+}
+
+.clearfix {
+  *zoom: 1
+}
