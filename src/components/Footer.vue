@@ -4,6 +4,7 @@
 			<div class="footer-leftForm">
 				<el-form ref="form" :model="form" label-width="80px">
 					<h1>456</h1>
+					<i class="fa fa-imdb" aria-hidden="true"></i>
 					<el-form-item label="活动名称">
 						<el-input v-model="form.name"></el-input>
 					</el-form-item>

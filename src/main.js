@@ -16,6 +16,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './styles/reset.css'  //css初始化
 import './styles/common.scss' //公共css样式
 
+// 引入awesome图标库
+import 'font-awesome/css/font-awesome.min.css';
+
 
 
 
