@@ -1,28 +1,44 @@
 <template>
-	<footer class="imbella-footer">
-		<section class="footer-content clearfix">
-			<div class="footer-leftForm">
-				<el-form ref="form" :model="form" label-width="80px">
-					<h1>456</h1>
-					<i class="fa fa-imdb" aria-hidden="true"></i>
-					<el-form-item label="活动名称">
-						<el-input v-model="form.name"></el-input>
-					</el-form-item>
-					<el-form-item label="活动名称">
-						<el-input v-model="form.name"></el-input>
-					</el-form-item>
-					<el-form-item label="活动形式">
-						<el-input type="textarea" v-model="form.desc"></el-input>
+	<footer class="imbella-footer mt3">
+		<el-row class="footer-content">
+			<el-col :lg="12" :md="24" class="footer-leftForm df jcc">
+				<el-form ref="form" :model="form" label-width="10px">
+					<h3 class="fontl mb1">Join The Team</h3>
+					<h4 class="fontm mb3">
+						Sign up to join imbella for early access to new products and order
+					</h4>
+					<div class="df">
+						<el-form-item prop="email">
+							<el-input
+								v-model="form.email"
+								size="mini"
+								placeholder="E-mail"
+							></el-input>
+						</el-form-item>
+						<el-form-item prop="name">
+							<el-input
+								v-model="form.name"
+								size="mini"
+								placeholder="Name"
+							></el-input>
+						</el-form-item>
+					</div>
+					<el-form-item>
+						<span class="formRidio">Email preference:</span>
+						<el-radio-group class="df fdc" v-model="form.resource">
+							<el-radio label="Women"></el-radio>
+							<el-radio label="Men"></el-radio>
+							<el-radio label="Both"></el-radio>
+						</el-radio-group>
 					</el-form-item>
 					<el-form-item>
-						<el-button type="primary" @click="onSubmit">立即创建</el-button>
-						<el-button>取消</el-button>
+						<el-button type="primary" @click="onSubmit">Sign Up Now</el-button>
 					</el-form-item>
 				</el-form>
-			</div>
-			<div class="footer-rightInfo">
-				<div class="footer-infoMenu df dfc">
-					<div class="footer-menuLeft">
+			</el-col>
+			<el-col :lg="12" :md="24" class="footer-rightInfo">
+				<div class="footer-infoMenu dfac">
+					<div class="footer-menuItem">
 						<ul>
 							<li>ABOUT</li>
 							<li>MY ACCOUNT</li>
@@ -31,7 +47,7 @@
 							<li>FAQs</li>
 						</ul>
 					</div>
-					<div class="footer-menuRight">
+					<div class="footer-menuItem" style="visibility: hidden">
 						<ul>
 							<li>ABOUT</li>
 							<li>MY ACCOUNT</li>
@@ -42,17 +58,31 @@
 					</div>
 				</div>
 				<div class="footer-icon">
-					<ul class="df">
-						<li>facebook</li>
-						<li>wechat</li>
-						<li>email</li>
-						<li>TERMS</li>
-						<li>FAQs</li>
+					<ul class="df jcc">
+						<li>
+							<i class="fa fa-twitter-square fa-2x"></i>
+						</li>
+						<li>
+							<i class="fa fa-facebook-square fa-2x"></i>
+						</li>
+						<li>
+							<i class="fa fa-instagram fa-2x"></i>
+						</li>
+						<li class="fa fa-linkedin-square fa-2x">
+							
+						</li>
+						<li>
+							<i class="fa fa-wechat fa-2x"></i>
+						</li>
+						<li>
+							<i class="fa fa-phone-square fa-2x"></i>
+						</li>
 					</ul>
 				</div>
-			</div>
-		</section>
-		<section class="footer-copyright">Imbella Co., Ltd</section>
+			</el-col>
+		</el-row>
+		<section class="footer-copyright">
+			<i class="fa fa-copyright"></i>Imbella Co., Ltd</section>
 	</footer>
 </template>
 
@@ -65,45 +95,74 @@ export default {
 				name: "",
 				type: [],
 				desc: "",
+				resource: "",
 			},
 		};
 	},
 	methods: {
-		onSubmit() {
-			console.log("submit!");
-		},
+		onSubmit() {},
 	},
 };
 </script>
 
 <style lang="scss">
 .imbella-footer {
+	// width: 100vw;
 	// min-width: 999px;
-	background: pink;
+	// background: pink;
 	.footer-content {
 		max-width: 1630px;
 		min-width: 999px;
 		margin: 0 auto;
-		background: peru;
+		transition: all 0.3s;
+		// background: peru;
 		.footer-leftForm {
-			float: left;
-			background: red;
+			// float: left;
+			// background: red;
+			.formRidio {
+				font-size: 20px;
+			}
 		}
 		.footer-rightInfo {
-			float: right;
-			background: blue;
+			// float: right;
+			// background: blue;
 			.footer-infoMenu {
-				.footer-menuLeft {
-				}
-				.footer-menuRight {
+				letter-spacing: -1px;
+				.footer-menuItem {
+					>ul>li{
+						margin-top: 32px;
+					}
 				}
 			}
 			.footer-icon {
+
+
+				>ul>li{
+					margin:20px;
+				}
 			}
 		}
 	}
 	.footer-copyright {
 		text-align: center;
+		min-width: 999px;
+		// background: cornflowerblue;
+	}
+}
+@media screen and (max-width: 1870px) {
+	.footer-content {
+		width: 1440px;
+	}
+}
+@media screen and (max-width: 1654px) {
+	.footer-content {
+		width: 1280px;
+	}
+}
+
+@media screen and (max-width: 1438px) {
+	.footer-content {
+		width: 999px;
 	}
 }
 </style>

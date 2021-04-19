@@ -3,6 +3,20 @@
   margin: 0 auto;
 }
 
+.item{
+  margin: 10px;
+}
+
+.fontm {
+  font-size: 12px;
+  // -webkit-transform-origin-x: 0;
+  // -webkit-transform: scale(0.9);
+}
+
+.fontl {
+  font-size: 32px;
+}
+
 // element 下拉
 .el-dropdown-link {
   cursor: pointer;
@@ -15,15 +29,49 @@
   }
 }
 
-
+// flexBox
 .df {
   display: flex;
 }
 
-.dfc {
+.dfbc {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.dfac {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.aic {
+  align-items: center;
+}
+
+.aie {
+  align-items: flex-end;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcsa {
+  justify-content: space-around;
+}
+
+.jce {
+  justify-content: flex-end;
+}
+
+.fdc {
+  flex-direction: column;
 }
 
 // 文字一行超出省略

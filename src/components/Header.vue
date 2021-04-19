@@ -1,23 +1,68 @@
 <template>
-	<div>
-		<!-- <section>
-			最外层
-			<div class="container"></div>
-		</section> -->
-
-		<header class="header-wrap">
-			<div class="imb-logo">
-				<h1>
-					<a href="#" title="imbella" class="logo-bd clearfix">imbella</a>
-				</h1>
-				<!-- <h2 aria-hidden="true">
-					<a class="clearfix" href="#">imbella</a>
-				</h2> -->
-			</div>
-			<div class="imb-search"></div>
-      <div class="imb-nav"></div>
-		</header>
-	</div>
+	<header>
+		<div class="header-container">
+			<section class="header-wrap dfbc">
+				<div class="imb-logo">
+					<h1>
+						<a href="#" title="imbella" class="logo-bd">imbella</a>
+					</h1>
+					<!-- <h2 aria-hidden="true">
+						<a href="#">imbella</a>
+					</h2> -->
+				</div>
+				<div class="imb-search-box">
+					<!-- 方案一：原生form -->
+					<div class="imb-search">
+						<form class="imb-searchForm">
+							<input
+								type="search"
+								autocomplete="off"
+								placeholder="海马，你的老婆怎么在我卡组里？"
+								class="imb-search-keyword"
+							/>
+							<div class="imb-search-btn">
+								<span class="fa fa-search imb-search-submit"></span>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="imb-fastNav">
+					<div class="imb-userCenter">
+						<div class="user-item">
+							<a href="#">
+								<span class="fa fa-gittip fa-2x mr1"></span>
+								<span>My Favorites</span>
+							</a>
+						</div>
+						<div class="user-item">
+							<a href="#"
+								><span class="fa fa-user-circle fa-2x mr1"></span>
+								<span>sadasdasdasdasd</span></a
+							>
+						</div>
+						<div class="user-item">
+							<a href="#">
+								<el-badge :value="2" :max="99" class="cart-sign">
+									<span class="fa fa-shopping-cart fa-2x"></span> </el-badge
+								><span></span
+							></a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<nav class="header-nav clearfix">
+				<ul>
+					<li>NEW ARRIVALS</li>
+					<li>BOTTOMS</li>
+					<li>TOPS</li>
+					<li>YOGA SET</li>
+					<li>FUCTIONAL WEAR</li>
+					<li>ACCESSORISE</li>
+					<li>MEN</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 </template>
 
 <script>
@@ -27,41 +72,145 @@ export default {
 </script>
 
 <style lang="scss">
-.header-wrap {
-  min-width: 999px;
-  background: peru;
-	.logo {
-		width: 170px;
-		height: 70px;
-		float: left;
-		h1 {
-			position: relative;
-			.logo-bd {
-				// display: block;
-				// margin-left: 22px;
-				// padding-top: 58px;
-				width: 142px;
-				// height: 0;
-				// overflow: hidden;
-				// text-indent: -9999px;
-				background: url("../assets/logo.png") no-repeat;
+header {
+	// min-width: 999px;
+	// margin: 0 auto;
+	// background: coral;
+	.header-container {
+		min-width: 999px;
+		max-width: 1630px;
+		margin: 0 auto;
+		transition: all 0.3s;
+		// background: cornflowerblue;
+		.header-wrap {
+			// background: cornsilk;
+			.imb-logo {
+				h1 {
+					.logo-bd {
+						display: block;
+						width: 170px;
+						height: 69px;
+						background: url("../assets/logo.png") 0 0 no-repeat;
+						background-size: 170px auto;
+						text-indent: -9999px;
+						overflow: hidden;
+					}
+				}
+			}
+			.imb-search-box {
+				margin: 0 10px;
+				width: 520px;
+				transition: width 0.3s;
+				// background: cyan;
+				.imb-search {
+					position: relative;
+					border: 1px solid #ddd;
+					border-radius: 4px;
+					.imb-searchForm {
+						padding: 0 0 0 48px;
+						border: 1px solid hsla(0, 0%, 100%, 0);
+						border-radius: 2px;
+						// background-color: #fff;
+						.imb-search-keyword {
+							overflow: hidden;
+							width: 100%;
+							height: 34px;
+							border: none;
+							outline: none;
+							color: #999;
+							font-size: 14px;
+							line-height: 34px;
+							transition: all 0.2s;
+						}
+						.imb-search-btn {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 48px;
+							height: 36px;
+							cursor: pointer;
+							.imb-search-submit {
+								position: absolute;
+								top: 8px;
+								right: 16px;
+								line-height: 20px;
+							}
+						}
+					}
+				}
+			}
+			.imb-fastNav {
+				// background: pink;
+				.imb-userCenter {
+					display: flex;
+					align-items: center;
+					.user-item {
+						margin: 0 12px;
+						cursor: pointer;
+						white-space: nowrap;
+						letter-spacing: -1px;
+						a {
+							display: block;
+							padding: 2px 4px;
+							span{
+								vertical-align: middle;
+							}
+							.cart-sign {
+								
+							}
+						}
+					}
+				}
 			}
 		}
-		// h2 {
-		// 	display: none;
-		// 	a {
-		// 		display: block;
-		// 		padding-top: 33px;
-		// 		width: 80px;
-		// 		height: 0;
-		// 		text-indent: -9999px;
-		// 		overflow: hidden;
-		// 		background: url("../assets/logo.png") no-repeat;
-		// 	}
-		// }
+		.header-nav {
+			position: relative;
+			// background: crimson;
+			height: 40px;
+			line-height: 40px;
+			> ul {
+				position: absolute;
+				top: 0;
+				left: 6%;
+				// transform: translateX(-50%);
+				li {
+					float: left;
+					cursor: pointer;
+					padding: 0 20px;
+				}
+			}
+		}
 	}
 }
-@media screen and (min-width: 1280px) {
-  
+@media screen and (max-width: 1870px) {
+	.header-container {
+		width: 1440px;
+		.header-wrap {
+			.imb-search-box {
+				width: 520px !important;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1654px) {
+	.header-container {
+		width: 1280px;
+		.header-wrap {
+			.imb-search-box {
+				width: 480px !important;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1438px) {
+	.header-container {
+		width: 999px;
+		.header-wrap {
+			.imb-search-box {
+				width: 360px !important;
+			}
+		}
+	}
 }
 </style>
