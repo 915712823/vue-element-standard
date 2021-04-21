@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    
+    <router-link to="./Login.vue">123156</router-link>
   </div>
 </template>
 
